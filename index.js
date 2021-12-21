@@ -40,8 +40,8 @@ app.post('/register', (req, res) => {
         username: req.body.username,
         password: bcrypt.hashSync(req.body.password, 10)
     })
-    user.save().then(() => console.log(user))
-    res.send({ success: true })
+     user.save()
+    res.send({ success: true, data: user })
 })
 
 app.get('/logout', (req, res) => {
